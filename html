@@ -1,0 +1,29 @@
+<form [formGroup]="myForm">
+  <infy-quill-angular
+    [textChange]="textChangeMethod"
+    [selectionChange]="selectionChangeMethod"
+    [editorChange]="editorChangeMethod"
+    [onceTextChange]="onceTextChangeMethod"
+    [onceSelectionChange]="onceSelectionChangeMethod"
+    [onceEditorChange]="onceEditorChangeMethod"
+    [toolbaroptions]="quillConfig"
+    [turnOffTextChangeHandler]="textToggle"
+    [turnOffSelectionChangeHandler]="selectionToggle"
+    [turnOffEditorChangeHandler]="editorToggle"
+    [content]="varr"
+    formControlName="editor"
+    [(ngModel)]="varr"
+  >
+  </infy-quill-angular>
+</form>
+<button (click)="textToggle = !textToggle">Text show {{ textToggle }}</button>
+<button (click)="selectionToggle = !selectionToggle">
+  Selection show {{ selectionToggle }}
+</button>
+<button (click)="editorToggle = !editorToggle">
+  Editor show {{ editorToggle }}
+</button>
+
+<p>{{ varr }}</p>
+
+<!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
